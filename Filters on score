@@ -1,0 +1,57 @@
+Input:
+Ram,Naresh,Haran,Raghu
+12,13,14,15
+Ram,Naresh,Haran
+23,24,25
+Naresh,Haran,Raghu
+34,35,36
+14,5,6
+
+Output:
+Haran,Naresh,Raghu,Ram
+Haran
+
+---------------------------------------------------
+#input scanning
+list1=input().split(',')
+maths=input().split(',')
+list2=input().split(',')
+physics=input().split(',')
+list3=input().split(',')
+chemistry=input().split(',')
+threshold=input().split(',')
+
+#putting values in dictionary foramt...
+dic_1={list1[i]:int(maths[i]) for i in range(len(maths))}
+dic_2={list2[i]:int(physics[i]) for i in range(len(physics))}
+dic_3={list3[i]:int(chemistry[i]) for i in range(len(chemistry))}
+
+#comparing the values in dictionaries...
+list_4=[];list_5=[];list_6=[]
+for key,value in dic_1.items():
+    if int(threshold[0])<=value:
+        list_4.append(key)
+for key,value in dic_2.items():
+    if int(threshold[1])<=value:
+        list_5.append(key)
+for key,value in dic_3.items():
+    if int(threshold[2])<=value:
+        list_6.append(key)
+        
+#Removing the common values in lists and Sorting the items in descending order in result1 and result2...
+result1=list(set(list_4)|set(list_5)|set(list_6))
+result2=list(set(list_4)&set(list_5)&set(list_6))
+result1.sort()
+result2.sort()
+
+#printing the results.....
+if len(result1)==0:
+    print('No Students')
+else:
+    Final_result1=[str(i) for i in result1]
+    print(','.join(Final_result1))
+if len(result2)==0:
+    print('No Students')
+else:
+    Final_result2=[str(i) for i in result2]
+    print(','.join(Final_result2))
