@@ -1,0 +1,22 @@
+Input:
+Anand,Ramesh,Kiran
+12,11,10
+Ramesh
+
+Output:
+Ramesh,16.0
+Anand,12.0
+Kiran,10.0
+
+---------------------------------------------------
+
+a = input().split(',')
+b = input().split(',')
+c = input().split(',')
+x={a[i]:float(b[i]) for i in range(len(a))}
+for i in c:
+     x[i]=x[i]+5
+p=sorted(x.items(),reverse=False)
+s=sorted(p,key=lambda x:x[1],reverse=True)
+for k,v in s:
+    print(k,v,sep=',')
