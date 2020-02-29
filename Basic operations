@@ -1,0 +1,27 @@
+Input:
+4,5
+ADD
+
+Output:
+9.0
+
+---------------------------------------------------
+def get_result(a,b,operation):
+    operation_dict={'ADD':add,'SUBTRACT':subtract,'MULTIPLY':multiply,'DIVIDE':divide}
+    func = operation_dict[operation]
+    result=0
+    result = func(a,b)
+    print(round(result,2))
+    
+def add(a,b):
+    return a+b
+def subtract(a,b):
+    return a-b
+def multiply(a,b):
+    return a*b
+def divide(a,b):
+    return a/b
+
+a,b=map(float,input().split(','))
+operation = input()
+get_result(a,b,operation)
