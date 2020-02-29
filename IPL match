@@ -1,0 +1,58 @@
+Input:
+6
+CSK;RR;win
+RR;DD;draw
+MI;KKR;win
+SH;RR;loss
+CSK;DD;draw
+MI;DD;draw
+
+Output:
+Team                    | MP |  W |  D |  L |  P |
+CSK                     |  2 |  1 |  1 |  0 |  4 |
+MI                      |  2 |  1 |  1 |  0 |  4 |
+RR                      |  3 |  1 |  1 |  1 |  4 |
+DD                      |  3 |  0 |  3 |  0 |  3 |
+KKR                     |  1 |  0 |  0 |  1 |  0 |
+SH                      |  1 |  0 |  0 |  1 |  0 |
+-------------------------------------------------------------------------------------------------------------------------------
+a = int(input())
+print('{:<23}'.format('Team') + ' |' + '{:>3}'.format('MP') + ' |' + '{:>3}'.format('W') + ' |' + '{:>3}'.format('D') + ' |' + '{:>3}'.format('L') + ' |' + '{:>3}'.format('P') + ' |')
+'''t1=[];t2=[]
+for i in range(a):
+    s=input().split(';')
+    t2.append(s)
+    t1.append(s[0])
+    t1.append(s[1])
+t1=sorted(set(t1))
+m=[];w=[];l=[];d=[];p=[]
+for i in range(len(t1)):
+    mt,win,loss,draw,points=0,0,0,0,0
+    for j in range(len(t2)):
+        if t1[i] in t2[j] and t2[j][2]=='win':
+            mt=mt+1
+            if t1[i]==t2[j][0]:
+                win=win+1
+                #k.append(win)
+            else:
+                loss=loss+1
+        if t1[i] in t2[j] and t2[j][2]=='loss':
+            mt=mt+1
+            if t1[i]==t2[j][0]:
+                loss=loss+1
+            else:
+                win=win+1
+        if t1[i] in t2[j] and t2[j][2]=='draw':
+            mt=mt+1
+            draw=draw+1
+    points=3*win+draw
+    m.append(mt)
+    w.append(win)
+    l.append(loss)
+    d.append(draw)
+    p.append(points)
+for i in range(len(p)):
+    x=max(p)
+    z=p.index(x)
+    print('{:<23}'.format(t1[z]) + ' |' + '{:>3}'.format(m[z]) + ' |' + '{:>3}'.format(w[z]) + ' |' + '{:>3}'.format(d[z]) + ' |' + '{:>3}'.format(l[z]) + ' |' + '{:>3}'.format(p[z]) + ' |')
+    p[z]=-1'''
