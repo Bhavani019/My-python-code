@@ -1,0 +1,36 @@
+Input:
+34F
+
+Output:
+1.11C
+34.0F
+274.11K
+
+
+---------------------------------------------------
+
+def main(temp):
+    p=temp[-1]
+    s=float(temp[0:-1])
+    if p=='F':
+        c=(s-32)*5/9
+        k=c+273
+        print('{}C'.format(round(float(c),2)))
+        print('{}F'.format(round(float(s),2)))
+        print('{}K'.format(round(float(k),2)))
+    elif p=='C':
+        f=(s*9/5)+32
+        k=s+273
+        print('{}C'.format(round(float(s),2)))
+        print('{}F'.format(round(float(f),2)))
+        print('{}K'.format(round(float(k),2)))
+    elif p=='K':
+        c=s-273
+        f=(c*9/5)+32
+        print('{}C'.format(round(float(c),2)))
+        print('{}F'.format(round(float(f),2)))
+        print('{}K'.format(round(float(s),2)))
+   
+temp = input()
+main(temp)
+ 
