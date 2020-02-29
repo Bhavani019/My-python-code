@@ -1,0 +1,33 @@
+Input:
+7 8 + 3 2 + /
+
+Output:
+3
+----------------------------------------------------------------------------------------------------------------------
+input_1 = input().split()
+list1=[]
+for i in range(len(input_1)):
+    if input_1[i].isdigit()==True:
+        list1.append(int(input_1[i]))
+    elif input_1[i]=='+':
+        result=list1.pop()
+        result1=list1.pop()
+        final=result1+result
+        list1.append(final)
+    elif input_1[i]=='-':
+        result=list1.pop()
+        result1=list1.pop()
+        final=result1-result
+        list1.append(final)
+    elif input_1[i]=='*':
+        result=list1.pop()
+        result1=list1.pop()
+        final=result1*result
+        list1.append(final)
+    elif input_1[i]=='/':
+        result=list1.pop()
+        result1=list1.pop()
+        final=result1/result
+        list1.append(final)
+for i in list1:
+    print(int(i))
