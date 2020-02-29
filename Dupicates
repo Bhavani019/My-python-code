@@ -1,0 +1,15 @@
+Input:
+12,12,1,2,2,4
+
+Output:
+12.0,4.0,2.0,1.0
+
+
+---------------------------------------------------
+
+input1 = input().split(',')
+result = [float(i) for i in input1]
+result1 = list(set(result))
+result1.sort(reverse=True)
+Final_result=[str(i) for i in result1]
+print(','.join(Final_result))
