@@ -1,0 +1,9 @@
+Input:
+Hello World
+
+Output:
+olleH dlroW
+
+---------------------------------------------------
+
+print(*[i[::-1] for i in input().split()],end='')
