@@ -1,0 +1,26 @@
+Input:
+10,11,12,13,14
+
+Output:
+12.0
+11.83
+12.0
+1.58
+2.5
+
+
+---------------------------------------------------
+
+import statistics
+input_1 = list(map(float,input().split(',')))
+#print(input_1)
+Arithmetic=statistics.mean(input_1)
+Harmonic=statistics.harmonic_mean(input_1)
+Median=statistics.median(input_1)
+Standard=statistics.stdev(input_1)
+Variance=statistics.variance(input_1)
+print(round(float(Arithmetic),2))
+print(round(float(Harmonic),2))
+print(round(float(Median),2))
+print(round(float(Standard),2))
+print(round(float(Variance),2))
