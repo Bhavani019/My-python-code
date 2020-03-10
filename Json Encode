@@ -1,0 +1,16 @@
+Input:
+3
+Maths,MA101
+Physics,PH101
+Chemistry,CH101
+
+Output:
+{"Chemistry": "CH101", "Maths": "MA101", "Physics": "PH101"}
+------------------------------------------------------------------------------------------------------------
+import json 
+input_1 = int(input())
+dic={}
+for i in range(input_1):
+    s = input().split(',')
+    dic.update({s[0]:s[1]})
+print(json.dumps(dic,sort_keys=True))
