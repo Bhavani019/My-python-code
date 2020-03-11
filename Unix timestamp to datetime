@@ -1,0 +1,13 @@
+Input:
+1284105682
+
+Output:
+2010-09-10 13:31:22
+
+---------------------------------------------------
+
+from datetime import datetime,timedelta
+input_1 = int(input())
+x = datetime.fromtimestamp(input_1)
+y = x+timedelta(hours=5,minutes=30)
+print(y,end='')
