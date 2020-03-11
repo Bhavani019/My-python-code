@@ -1,0 +1,13 @@
+Input:
+Sun 05 Jan 2020 13:54:30
+
+Output:
+Sun 05 Jan 2020 19:24:30
+
+---------------------------------------------------
+
+from datetime import datetime,timedelta
+x = datetime.strptime(input(),'%a %d %b %Y %H:%M:%S')
+y = x+timedelta(hours=5,minutes=30)
+z = y.strftime('%a %d %b %Y %H:%M:%S')
+print(z,end='')
