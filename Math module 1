@@ -1,0 +1,19 @@
+Input:
+12.2
+
+Output:
+13
+12
+1
+13
+---------------------------------------------------------------------------------------------------------------------
+import math
+input_1 = float(input())
+smallest=math.ceil(input_1)
+largest=math.floor(input_1)
+Gcd=math.gcd(smallest,largest)
+factorial=math.factorial(smallest)/math.factorial(largest)
+print(smallest)
+print(largest)
+print(Gcd)
+print(int(factorial))
