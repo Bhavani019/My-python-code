@@ -1,0 +1,15 @@
+Input:
+Mike John Mike Anna Mike John John Mike Anna Anna
+
+Output:
+{'Anna': 3, 'John': 3, 'Mike': 4}
+
+---------------------------------------------------
+
+input_1 = input().split(' ')
+x = list(set(input_1))
+x.sort()
+dic = {}
+for i in range(len(x)):
+    dic[x[i]]=input_1.count(x[i])
+print(dic,end='')
