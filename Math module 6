@@ -1,0 +1,14 @@
+Input:
+12,2
+
+Output:
+4.52
+
+---------------------------------------------------
+
+import math
+m,n = map(int,input().split(','))
+mth_root = math.pow(m,1/n) 
+nth_root = math.pow(n,1/m)
+sum = mth_root + nth_root
+print(round(sum,2))
