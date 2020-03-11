@@ -1,0 +1,20 @@
+Input:
+12,2
+
+Output:
+1.440000e+02
+['1.440000e', '02']
+46
+
+---------------------------------------------------
+
+import math
+m,n = map(int,input().split(','))
+x = math.pow(m,n)
+y = '{:e}'.format(x)
+#print(y)
+z = y.split('+')
+#print(z)
+p = z[0].split('.')
+t = int(p[1][0:2])+int(z[1])
+print(t)
