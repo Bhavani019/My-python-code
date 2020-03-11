@@ -1,0 +1,12 @@
+Input:
+malayalam
+
+Output:
+{'a': 4, 'l': 2, 'm': 2, 'y': 1}
+
+---------------------------------------------------
+
+from collections import Counter
+x = Counter(input())
+y = dict(x)
+print(dict(sorted(y.items())),end='')
