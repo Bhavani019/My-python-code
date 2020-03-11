@@ -1,0 +1,46 @@
+Input:
+=======
+lionelMessi
+4
+
+Output:
+=======
+[('e', 2), ('i', 2), ('l', 2), ('s', 2)]
+
+--------------------------------------------------------------------------------------------
+Code-1:-
+========
+input_1 = input()
+input_2 = int(input())
+res = list(input_1)
+x = list(set(input_1))
+b=[]
+dic = {}
+for i in x:
+    b.append(res.count(i))
+dictionary = {x[i]:b[i] for i in range(len(x))}
+z = sorted(dictionary.items())
+result = sorted(z,key = lambda x:x[1],reverse=True)
+p=[]
+for i in range(input_2):
+    p.append(result[i])
+print(p,end='')
+
+--------------------------------------------------------------------------------------------------
+Code-2:-
+========
+from collections import Counter
+input_1 = input()
+input_2 = int(input())
+x = Counter(input_1)
+y = dict(x.most_common(input_2))
+#print(y)
+z = sorted(y.items())
+result = sorted(z,key=lambda x:x[1],reverse=True)
+print(result,end='')
+
+--------------------------------------------------------------------------------------------------
+
+
+
+
