@@ -1,0 +1,14 @@
+Input:
+12,2
+
+Output:
+4.88
+
+---------------------------------------------------
+
+import math
+m,n = map(int,input().split(','))
+mth_root = math.sqrt(m) 
+nth_root = math.sqrt(n)
+sum = mth_root + nth_root
+print(round(sum,2))
