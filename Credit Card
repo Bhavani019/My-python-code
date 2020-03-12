@@ -1,0 +1,30 @@
+Input:
+5
+6011 4444 4444 4449
+4703 4444 4444 4449
+5103 4444 4444 4449
+3703 4444 4444 444
+6703 4444 4444 4449
+
+Output:
+Discover
+Visa
+MasterCard
+American Express
+Unsupported Card
+
+---------------------------------------------------
+
+n = int(input())
+for i in range(n):
+    s = input()
+    if int(s[0:1])==4 and ((len(s)-3)==13 or (len(s)-3)==16):
+        print('Visa')
+    elif (int(s[0:2])==34 or int(s[0:2])==37) and (len(s)-3)==15:
+        print('American Express')
+    elif (int(s[0:2])==51 or int(s[0:2])==52 or int(s[0:2])==53 or int(s[0:2])==54 or int(s[0:2])==55) and (len(s)-3)==16:
+        print('MasterCard')
+    elif int(s[0:4])==6011 and (len(s)-3)==16:
+        print('Discover')
+    else:
+        print('Unsupported Card')
