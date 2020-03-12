@@ -1,0 +1,22 @@
+Input:
+12/2/2020
+
+Output:
+Wednesday
+---------------------------------------------------
+Input:
+24/2/2020
+
+Output:
+Monday
+---------------------------------------------------
+
+import datetime 
+day = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+date = datetime.datetime.strptime(input(),'%d/%m/%Y').weekday()
+print(day[date])
+
+
+'''import datetime
+date = datetime.datetime.strptime(input(),'%d/%m/%Y')
+print(date.strftime('%A'))'''
