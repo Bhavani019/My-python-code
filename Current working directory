@@ -1,0 +1,26 @@
+Input:
+5
+cd home
+cd user
+cd desktop
+cd ..
+cd /tests
+
+Output:
+/home
+/home/user
+/home/user/desktop
+/home/user
+/tests
+
+----------------------------------------------------------------------------------------------------
+
+import os
+n = int(input())
+p=''
+for i in range(n):
+    s = input().split(' ')
+    p = os.path.join(p,s[1])
+    print(os.path.abspath(p))
+
+
