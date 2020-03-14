@@ -1,0 +1,28 @@
+Input:
+4
+
+Output:
+
+------d------
+----d-c-d----
+--d-c-b-c-d--
+d-c-b-a-b-c-d
+--d-c-b-c-d--
+----d-c-d----
+------d------
+
+---------------------------------------------------
+
+import string
+alpha = string.ascii_lowercase
+
+n = int(input())
+x = []
+for i in range(n):
+    s = '-'.join(alpha[i:n])
+    x.append(s[::-1]+s[1:])
+y =len(x[0])
+for i in range(n-1,0,-1):
+    print(x[i].center(y,'-'))
+for i in range(n):
+    print(x[i].center(y,'-'))
