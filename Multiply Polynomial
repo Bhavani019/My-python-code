@@ -29,10 +29,11 @@ Input:
 3 -6
 
 Output:
--36x^6 - 120x^5 - 100x^4 - 60x^3 - 25
+-36x^6 - 120x^5 - 100x^4 - 60x^3 - 100x^2 - 25
 
 
 ---------------------------------------------------
+
 
 m = int(input())
 l1 = []; l2 = []
@@ -55,11 +56,13 @@ def mult_poly(l1,l2):
     for i in l1:
         for j in l2:
             list1.append(mul(i,j))
+    #print(list1)
 
     list2 = []
     for i in list1:
         if i[1] not in list2:
             list2.append(i[1])
+    #print(list2)
     
     list3 = []
     for i in list2:
@@ -68,28 +71,42 @@ def mult_poly(l1,l2):
             if j[1]==i:
                 c=c+j[0]
         list3.append((c,i))
+        #final = list3.copy()
+         # print(list3)
     
     dic = {}
-    for i in list3:
-        dic[i[0]]=i[1]
+    for i in range(len(list3)):
+        #dic[i[0]]=i[1]
+        #list3[i] = list(list3[i])
+        dic.update({list3[i][1]:list3[i][0]})
+        
+    #print(dic)
     
     dic1 = {}
     for i in dic:
-        if i!=0:
+        if dic[i]!=0:
             dic1.update({i:dic[i]})
-    s = sorted(dic1.items(),key=lambda x:x[1],reverse = True)
+    
+    #print(dic1)
+    
+    s = dict(sorted(dic1.items(),key=lambda x:x[0],reverse = True))
+    
+    
     if len(s)==0:
         print('0')
     else:
+        #print(s)
         p1 = []; p2 = []
-        for k,v in s:
-            p1.append('{}x^{}'.format(k,v))
-            p2 = ' + '.join(p1)
-            p2 = p2.replace('x^1','x')
-            p2 = p2.replace('x^0','')
-            p2 = p2.replace(' + -',' - ')
-            p2 = p2.replace(' 1x^',' x^')
-            p2 = p2.replace(' 1x ',' x ')
+        for k in s:
+            p1.append('{}x^{}'.format(s[k],k))
+        #print(p1)    
+        p2 = ' + '.join(p1)
+        p2 = p2.replace('x^1','x')
+        p2 = p2.replace('x^0','')
+        p2 = p2.replace(' + -',' - ')
+        p2 = p2.replace('-1x^','-x^')
+        p2 = p2.replace(' 1x^',' x^')
+        p2 = p2.replace(' 1x ',' x ') 
         print(p2)
         
 mult_poly(l1,l2)
