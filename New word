@@ -1,0 +1,16 @@
+Input:
+Surya
+3
+x
+
+Output:
+Surxa
+
+---------------------------------------------------
+
+input1 = list(input())
+input2 = int(input())
+input3 = input()
+input1.insert(input2,input3)
+result = input1.pop(input2+1)
+print(''.join(input1))
