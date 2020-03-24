@@ -1,0 +1,15 @@
+Input:
+https://en.wikipedia.org/wiki/Python_(programming_language)
+
+Output:
+Python (programming language) - Wikipedia
+
+---------------------------------------------------
+
+import requests
+from bs4 import BeautifulSoup
+url = input()
+result = requests.get(url)
+soup = BeautifulSoup(result.content,'html.parser')
+final = soup.find_all('title')
+[print(*i) for i in final]
