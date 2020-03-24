@@ -1,0 +1,17 @@
+Input:
+2.2.4
+2.2.1
+
+Output:
+2.2.4
+
+---------------------------------------------------
+
+input1 = list(map(int,input().split('.')))
+input2 = list(map(int,input().split('.')))
+if input1 > input2:
+    x = [str(i) for i in input1]
+    print('.'.join(x))
+else:
+    y = [str(i) for i in input2]
+    print('.'.join(y))
