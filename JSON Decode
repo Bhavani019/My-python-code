@@ -1,0 +1,17 @@
+Input:
+{"maths": {"assignment_1": 20, "assignment_2": 30}, "physics": {"assignment_1": 12, "assignment_2": 15}, "chemistry": {"assignment_1": 23, "assignment_2": 34}}
+
+Output:
+55
+
+---------------------------------------------------
+
+import json
+input1 = input()
+x = json.loads(input1)
+s=0
+for k,v in x.items():
+    res = list(v.values())
+    #print(res)
+    s = s + res[0]
+print(s)
