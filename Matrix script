@@ -1,0 +1,27 @@
+Input:
+7 3
+Tsi
+h%x
+i #
+sM 
+$a 
+#t%
+ir!
+
+Output:
+This is Matrix#  %!
+
+---------------------------------------------------
+
+import re
+input1,input2 = list(map(int,input().split()))
+matrix=[]
+for i in range(input1):
+    s = input()
+    matrix.append(s)
+string=''
+for x in range(input2):
+    for y in range(input1):
+        string+=matrix[y][x]
+result = re.sub(r'(?<=\w)[!@#$%&*\s]+(?=\w)',' ',string)
+print(result)
