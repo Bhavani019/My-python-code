@@ -1,0 +1,14 @@
+Input:
+8863
+
+Output:
+My YC app: Dropbox - Throw away your USB drive
+
+---------------------------------------------------
+
+import requests
+import json
+input1 = requests.get('https://hacker-news.firebaseio.com/v0/item/'+input()+'.json')
+result = input1.content
+final = json.loads(result)
+print(final['title'])
