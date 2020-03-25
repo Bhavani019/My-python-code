@@ -1,0 +1,37 @@
+Input:
+3
+speed
+elephant
+jo2ly
+
+Output:
+sp2ed
+elephant
+jolly
+
+---------------------------------------------------
+
+from itertools import groupby
+import re
+x = int(input())
+for i in range(x):
+    s = input()
+    if re.search(r'\d+[a-zA-Z]',s):
+        f = re.findall(r'\d+[a-zA-Z]',s)
+        l1=s1=''
+        for j in f:
+            l1 = (j[-1] for a in range(int(j[0:-1])))
+            p = (s1.join(l1))
+            s = re.sub(f'{j}',p,s)
+        print(s)
+    else:
+        l=[]
+        for i,j in groupby(s):
+            l.append((len(list(j)),i))
+        r=''
+        for i in l:
+            if i[0]>1:
+                r+=str(i[0]) + str(i[1])
+            else:
+                r+=str(i[1])
+        print(r)
