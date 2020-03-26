@@ -1,0 +1,23 @@
+Input:
+BANANA
+
+Output:
+stuart 12
+
+---------------------------------------------------------------------------------------------------------------------------
+
+n = input()
+kelvin = 0
+stuart = 0
+vowels = 'AEIOU'
+for i in range(len(n)):
+    if n[i] in vowels:
+        kelvin+=(len(n)-i)
+    else:
+        stuart+=(len(n)-i)
+if kelvin>stuart:
+    print('kelvin',kelvin,end='')
+elif kelvin<stuart:
+    print('stuart',stuart,end='')
+else:
+    print('Draw',end='')
