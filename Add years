@@ -1,0 +1,16 @@
+Input:
+Jul 11 2014
+-2
+
+Output:
+2012-07-11
+
+---------------------------------------------------
+
+from datetime import datetime,date
+x = datetime.strptime(input(),'%b %d %Y')
+input_2 = int(input())
+try:
+    print(x.replace(x.year + input_2).date(),end='')
+except:
+    print((x + (date(x.year + input_2,1,1) - date(x.year,1,1))).date(),end='')
