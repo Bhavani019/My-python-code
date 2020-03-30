@@ -1,0 +1,131 @@
+Input:
+=======
+6
+Chennai Super Kings;Rajasthan Royals;win
+Rajasthan Royal;Delhi Capitals;draw
+Mumbai Indians;Kolkata Knight Riders;win
+Sunrisers Hyderabad;Rajasthan Royals;loss
+Chennai Super Kings;Delhi Capitals;draw
+Mumbai Indians;Delhi Capitals;draw
+
+
+Output:
+========
+[
+    {
+        "Team": "Chennai Super Kings",
+        "Matches Played": 2,
+        "Total Points": 4,
+        "Won": 1,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Mumbai Indians",
+        "Matches Played": 2,
+        "Total Points": 4,
+        "Won": 1,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Delhi Capitals",
+        "Matches Played": 3,
+        "Total Points": 3,
+        "Won": 0,
+        "Tied": 3,
+        "Lost": 0
+    },
+    {
+        "Team": "Rajasthan Royals",
+        "Matches Played": 2,
+        "Total Points": 3,
+        "Won": 1,
+        "Tied": 0,
+        "Lost": 1
+    },
+    {
+        "Team": "Rajasthan Royal",
+        "Matches Played": 1,
+        "Total Points": 1,
+        "Won": 0,
+        "Tied": 1,
+        "Lost": 0
+    },
+    {
+        "Team": "Kolkata Knight Riders",
+        "Matches Played": 1,
+        "Total Points": 0,
+        "Won": 0,
+        "Tied": 0,
+        "Lost": 1
+    },
+    {
+        "Team": "Sunrisers Hyderabad",
+        "Matches Played": 1,
+        "Total Points": 0,
+        "Won": 0,
+        "Tied": 0,
+        "Lost": 1
+    }
+]
+
+---------------------------------------------------
+
+import json
+n = int(input())
+t1=[];t2=[]
+for i in range(n):
+    s=input().split(';')
+    t1.append(s[0])
+    t1.append(s[1])
+    t2.append(s)
+t1=sorted(set(t1))
+mp=[];win=[];loss=[];draw=[];points=[]
+for i in range(len(t1)):
+    mt,w,d,l,p=0,0,0,0,0
+    for j in range(len(t2)):
+        if t1[i] in t2[j] and t2[j][2]=='win':
+            mt=mt+1
+            if t1[i]==t2[j][0]:
+                w=w+1
+            else:
+                l=l+1
+        elif t1[i] in t2[j] and t2[j][2]=='loss':
+            mt=mt+1
+            if t1[i]==t2[j][0]:
+                l=l+1
+            else:
+                w=w+1
+        elif t1[i] in t2[j] and t2[j][2]=='draw':
+            mt=mt+1
+            d=d+1
+    p=3*w+d
+    mp.append(mt)
+    win.append(w)
+    loss.append(l)
+    draw.append(d)
+    points.append(p)
+    
+dic1 = {}
+for i in range(len(t1)):
+    dic1.update({t1[i]:[mp[i],win[i],loss[i],draw[i],points[i]]})
+
+y = sorted(dic1.items(),key = lambda x:x[1][-1],reverse=True)
+
+dic2={}
+
+l1 = []
+for i in y:
+    dic2.update({'Team': i[0],
+                 'Matches Played': i[1][0],
+                 'Total Points': i[1][4],
+                 'Won': i[1][1],
+                 'Tied': i[1][3],
+                 'Lost': i[1][2]})
+    l1.append(dic2)
+    dic2={}
+    
+result = json.dumps(l1,indent=4)
+
+print(result)
