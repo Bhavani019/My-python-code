@@ -17,3 +17,13 @@ for i in range(1,n,2):
 print('welcome'.center(x,'-'))
 for i in range(n-1,0,-2):
     print(str('.|.'*i).center(x,'-'))
+    
+----------------------------------------------------
+
+n,m = map(int,input().split())
+for i in range(1,n,2):
+    print(str('.|.'*i).center(m,'-'))
+print('WELCOME'.center(m,'-'))
+for i in range(n-2,0,-2):
+    print(str('.|.'*i).center(m,'-))
+
